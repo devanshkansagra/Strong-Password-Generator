@@ -15,14 +15,14 @@ let all = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmonoprstuvwxyz1234567890!@#$%^&
 function generate(length) {
 
     let password = "";
-    for(i = 0; i < length; i++) { 
+    for (i = 0; i < length; i++) {
         password += all[Math.floor(Math.random() * all.length)];
     }
     return password;
 }
 
 generateBtn.addEventListener('click', () => {
-    var upperCase =  /[A-Z]/;
+    var upperCase = /[A-Z]/;
     var lowerCase = /[a-z]/;
     var passNum = /[0-9]/;
     var specialChar1 = /[!-/]/;
@@ -36,36 +36,36 @@ generateBtn.addEventListener('click', () => {
     let f = document.getElementById('4');
 
     let op = generate(parseInt(passlength.value));
-    if(passlength.value == 0) {
-        charContain.innerHTML =  "0 characters";
+    if (passlength.value == 0) {
+        charContain.innerHTML = "0 characters";
     }
     else {
         charContain.innerHTML = passlength.value + " characters";
     }
     passOP.value = op.toString();
 
-    if(passOP.value.match(upperCase)) {
+    if (passOP.value.match(upperCase)) {
         capital.innerHTML = '<i class="fa-solid fa-check" id="2"></i>'
-        
+
     }
     else {
         capital.innerHTML = '<i class="fa-solid fa-circle fa-2xs" id="2"></i>'
-    }   
+    }
 
-    if(passOP.value.match(lowerCase)) {
+    if (passOP.value.match(lowerCase)) {
         small.innerHTML = '<i class="fa-solid fa-check" id="3"></i>'
     }
     else {
         small.innerHTML = '<i class="fa-solid fa-circle fa-2xs" id="3"></i>';
     }
 
-    if(passOP.value.match(passNum)) {
+    if (passOP.value.match(passNum)) {
         numbers.innerHTML = '<i class="fa-solid fa-check" id="1"></i>';
     }
     else {
         numbers.innerHTML = '<i class="fa-solid fa-circle fa-2xs" id="1"></i>';
     }
-    if(passOP.value.match(specialChar1) || passOP.value.match(specialChar2) || passOP.value.match(specialChar3) || passOP.value.match(specialChar4)) {
+    if (passOP.value.match(specialChar1) || passOP.value.match(specialChar2) || passOP.value.match(specialChar3) || passOP.value.match(specialChar4)) {
         special.innerHTML = '<i class="fa-solid fa-check" id="4"></i>';
     }
     else {
@@ -76,4 +76,9 @@ generateBtn.addEventListener('click', () => {
 clear.addEventListener('click', () => {
     passOP.value = "";
     charContain.innerHTML = "";
+    let passlength = document.getElementById('passLen');
+    capital.innerHTML = '<i class="fa-solid fa-circle fa-2xs" id="2"></i>'
+    small.innerHTML = '<i class="fa-solid fa-circle fa-2xs" id="3"></i>';
+    numbers.innerHTML = '<i class="fa-solid fa-circle fa-2xs" id="1"></i>';
+    special.innerHTML = '<i class="fa-solid fa-circle fa-2xs" id="4"></i>';
 });
