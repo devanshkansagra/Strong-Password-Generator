@@ -1,0 +1,49 @@
+.container {
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+}
+
+.passwordBox {
+    /* border: 2px solid white; */
+    width: 100%;
+    padding: 4rem;
+}
+
+.item {
+    margin: 2rem 0rem;
+}
+
+@media (max-width: 485px) {
+    .btn {
+        margin-top: 1rem;
+    }
+    .ms-3 {
+        margin-left: 0;
+    }
+}
+
+#passOP {
+    font-size: 1.5rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+li {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.includeCont {
+    font-size: 1.2rem;
+}
